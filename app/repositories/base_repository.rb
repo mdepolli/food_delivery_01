@@ -16,12 +16,17 @@ class BaseRepository
   end
 
   def all
-    return @elements
+    @elements
+  end
+
+  def find(id)
+    @elements.find { |element| element.id == id }
   end
 
   private
 
   def load_csv
+    return unless File.exist?(@csv_file_path)
     csv_options = { headers: :first_row, header_converters: :symbol }
     CSV.foreach(@csv_file_path, csv_options) do |row|
       @elements << build_element(row)
