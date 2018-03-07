@@ -8,7 +8,7 @@ class MealsController
 
   def add
     meal_name = @meals_view.ask_for(@meals_view.name_label)
-    meal_price = @meals_view.ask_for(@meals_view.price_label)
+    meal_price = @meals_view.ask_for(@meals_view.price_label).to_i
     meal = Meal.new(name: meal_name, price: meal_price)
     @meal_repository.add(meal)
   end
