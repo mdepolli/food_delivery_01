@@ -13,6 +13,6 @@ class Customer
   end
 
   def row_for_csv
-    [self.id, self.name, self.address]
+    [id, name, address]
   end
 end

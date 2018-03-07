@@ -13,6 +13,6 @@ class Meal
   end
 
   def row_for_csv
-    [self.id, self.name, self.price]
+    [id, name, price]
   end
 end
